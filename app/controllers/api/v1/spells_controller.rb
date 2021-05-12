@@ -1,2 +1,4 @@
 class SpellsController < ApplicationController
+
+  
 end

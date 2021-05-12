@@ -1,17 +1,20 @@
-Spell.destroy_all
-Caster_class.destroy_all
-
-bard = Caster_class.create(name: "Bard")
-cleric = Caster_class.create(name: "Cleric")
-druid = Caster_class.create(name: "Druid")
-paladin = Caster_class.create(name: "Paladin")
-ranger = Caster_class.create(name: "Ranger")
-sorcerer = Caster_class.create(name: "Sorcerer")
-warlock = Caster_class.create(name: "Warlock")
-wizard = Caster_class.create(name: "Wizard")
-
 
 require 'rest-client'
+
+
+Spell.destroy_all
+CasterClass.destroy_all
+
+bard = CasterClass.create(name: "Bard")
+cleric = CasterClass.create(name: "Cleric")
+druid = CasterClass.create(name: "Druid")
+paladin = CasterClass.create(name: "Paladin")
+ranger = CasterClass.create(name: "Ranger")
+sorcerer = CasterClass.create(name: "Sorcerer")
+warlock = CasterClass.create(name: "Warlock")
+wizard = CasterClass.create(name: "Wizard")
+
+
 
 resp = RestClient::Request.execute(method: :get,
   url:'https://api.open5e.com/spells/?limit=400',

@@ -1,2 +1,0 @@
-class CasterClassesController < ApplicationController
-end
