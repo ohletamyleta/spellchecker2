@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       namespace :v1 do 
 
         resources :spells
-        resources :spellbooks
+        resources :caster_classes
 
       end
     end
