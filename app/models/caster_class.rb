@@ -1,0 +1,2 @@
+class CasterClass < ApplicationRecord
+end
