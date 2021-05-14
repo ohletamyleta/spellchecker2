@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-post '/login',    to: 'sessions#create'
-post '/logout',   to: 'sessions#destroy'
-get '/logged_in', to: 'sessions#is_logged_in?'
+  post "api/v1/login", to: "sessions#create"
+  get "api/v1/get_current_user", to: "sessions#get_current_user"
+  delete "api/v1/logout", to: "sessions#destroy"
+  post "/api/v1/signup", to: "users#create"
   
 resources :users, only: [:create, :show, :index]
   
