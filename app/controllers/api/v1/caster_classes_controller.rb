@@ -6,3 +6,5 @@ class Api::V1::CasterClassesController < ApplicationController
   end
   
 end
+
+#  develop an index of spells per class?  STRETCH GOAL

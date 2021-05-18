@@ -1,4 +1,4 @@
 class CasterClass < ApplicationRecord
 
-  has_many :spells, dependent: :destroy
+  # has_many :spells, dependent: :destroy
 end
