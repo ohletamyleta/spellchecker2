@@ -36,6 +36,7 @@ class Api::V1::SpellsController < ApplicationController
     def spell_params
       params.require(:spell).permit(:name, :desc, :higher_level, :range, :components, :material, :ritual, :duration, :concentration, :casting_time, :level, :level_int, :school, :dnd_class, :archetype, :circles)
     end
+    
 
     def set_spell
       @spell = Spell.find_by(id: params[:id])
