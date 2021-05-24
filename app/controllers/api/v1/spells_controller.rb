@@ -1,6 +1,7 @@
 class Api::V1::SpellsController < ApplicationController
 
   before_action :set_spell, only: [:update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   def index
     spells = Spell.all 
@@ -33,8 +34,9 @@ class Api::V1::SpellsController < ApplicationController
   private
 
     def spell_params
-      params.permit(:name, :desc, :higher_level, :range, :components, :materia;, :ritual, :duration, :concentration, :casting_time, :level, :level_int, :school, :dnd_class, :archetype, :circles)
+      params.require(:spell).permit(:name, :desc, :higher_level, :range, :components, :material, :ritual, :duration, :concentration, :casting_time, :level, :level_int, :school, :dnd_class, :archetype, :circles)
     end
+    
 
     def set_spell
       @spell = Spell.find_by(id: params[:id])
