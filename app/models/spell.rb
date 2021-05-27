@@ -1,4 +1,5 @@
 class Spell < ApplicationRecord
 
-  # belongs_to :caster_class
+  validates :name, :desc, :dnd_class, :level, presence: true
+  
 end
