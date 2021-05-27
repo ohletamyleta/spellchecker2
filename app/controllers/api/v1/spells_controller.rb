@@ -1,11 +1,15 @@
 class Api::V1::SpellsController < ApplicationController
 
-  before_action :set_spell, only: [:update, :destroy]
+  before_action :set_spell, only: [:show, :update, :destroy]
   skip_before_action :verify_authenticity_token
 
   def index
     spells = Spell.all 
     render json: SpellSerializer.new(spells)
+  end
+
+  def show
+    render json: @spell
   end
 
   def create
